@@ -35,76 +35,11 @@ const config: Config = {
         },
         primary: {
           purple: {
-            50: "#F8F2FA",
-            60: "#DFC2E7",
-            70: "#9E99E7",
-            90: "#9432AC",
-            100: "#7b0299",
-            200: "#5F1272",
-          },
-        },
-        system: {
-          red: {
-            base: "#DE350B",
-            light: "#FAE9EA",
-            lightHover: "#F5D2D3",
-            dark: "#980C0C",
-          },
-          orange: {
-            alert: "#E98305",
-            dark: "#AD5700",
-            lightHover: "#FAE2C7",
-          },
-          green: {
-            normal: "#28A138",
-            dark: "#2D7738",
-            light: "#EBF5EC",
-            lightHover: "#D7EAD9",
-          },
-          blue: {
-            base: "#0172CA",
-            light: "#E8F4FD",
-            lightHover: "#D0E9FB",
-            dark: "#005AA3",
-          },
-          pink: {
-            light: "#FFF2E2",
-          },
-        },
-        graph: {
-          progress1: {
-            DEFAULT: "#FFB200",
-            light: "#FFF5CC",
-          },
-          progress2: {
-            DEFAULT: "#4339F2",
-            light: "#DAD7FE",
-          },
-          progress3: {
-            DEFAULT: "#02A0FC",
-            light: "#CCF8FE",
-          },
-          progress4: {
-            DEFAULT: "#E98305",
-            light: "#FAE2C7",
-          },
-          progress5: {
-            DEFAULT: "#28A138",
-            light: "#D7EAD9",
-          },
-          progress6: {
-            DEFAULT: "#FF3A29",
-            light: "#FFE5D3",
-          },
-          progress7: {
-            DEFAULT: "#a508ae",
-            light: "#bd58cf",
-          },
-          bar1: {
-            DEFAULT: "#34B53A",
-          },
-          bar2: {
-            DEFAULT: "#02A0FC",
+            default: "#fa4003",
+            50: "#f46f47",
+            60: "#e89f0f",
+            70: "#ea7325",
+            90: "#fa4003",
           },
         },
       },
