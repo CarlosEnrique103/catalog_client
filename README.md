@@ -27,7 +27,7 @@ $ npm run dev
 
 ## 🪪 Screens
 
-[Download file](https://raw.githubusercontent.com/CarlosEnrique103/catalog_api/main/catalog.pdf)
+[Download file](https://raw.githubusercontent.com/CarlosEnrique103/catalog_client/main/catalog.pdf)
 
 
 ## 🪪 Backend
