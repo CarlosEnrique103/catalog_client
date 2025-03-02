@@ -41,13 +41,16 @@ export function useCatalog() {
   const handleDownloadPDFWithoutLogin = async (id: string) => {
     try {
       if (email !== "") {
+        await CatalogService.saveEmail(email);
         await CatalogService.downloadPDF(id);
         customToast({
-          title: "File downloaded.",
+          title: "File downloaded and email saved.",
           type: "success",
         });
+
         onOpenChange();
         setEmail("");
+        setIdProduct("");
       }
     } catch (error) {
       console.error("Error during download PDF:", error);
