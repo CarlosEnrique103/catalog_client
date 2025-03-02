@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import useLoaderStore from "@/store/ui/useLoaderStore";
 import { registerSchema } from "../schemas/registerSchema";
+import { useUserStore } from "@/store/auth/userStore";
+import { registerApi } from "../services/loginService";
 
 export default function useRegister() {
   const [isFormValid, setIsFormValid] = useState(false);
@@ -58,9 +60,24 @@ export default function useRegister() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleRegister = async (email: string, password: string) => {
+  const handleRegister = async (
+    firstName: string,
+    lastName: string,
+    email: string,
+    password: string
+  ) => {
     try {
-      return true;
+      const response = await registerApi({
+        firstName,
+        lastName,
+        email,
+        password,
+      });
+
+      if (response?.data) {
+        return true;
+      }
+      return false;
     } catch (error) {
       setShowAlert(true);
       console.error("Error during sign in:", error);
@@ -74,10 +91,14 @@ export default function useRegister() {
     }
     showLoader();
 
-    const isRegister = await handleRegister(formData.email, formData.password);
+    const isRegister = await handleRegister(
+      formData.firstName,
+      formData.lastName,
+      formData.email,
+      formData.password
+    );
 
     if (isRegister) {
-      console.log({ formData });
       router.push(`/login`);
     }
 

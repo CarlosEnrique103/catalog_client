@@ -1,31 +1,32 @@
-import { type UserAdminType } from '@/types/admin/userAdminTypes'
-import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 type Actions = {
-  setUser: (data: UserAdminType) => void
-}
+  setUser: (data: IUser) => void;
+};
 
-export const useUserStore = create(persist<UserAdminType & Actions>(
-  (set) => ({
-    name: '',
-    lastName: '',
-    email: '',
-    role: 'moderator',
-    picture: '',
-    username: '',
-    setUser: (data: UserAdminType) => {
-      set(() => ({
-        name: data.name,
-        lastName: data.lastName,
-        email: data.email,
-        role: data.role,
-        picture: data.picture,
-        username: data.username
-      }))
+export const useUserStore = create(
+  persist<IUser & Actions>(
+    (set) => ({
+      id: "",
+      firstName: "",
+      lastName: "",
+      token: "",
+      email: "",
+      isAdmin: false,
+      setUser: (data: IUser) => {
+        set(() => ({
+          id: data.firstName,
+          firstName: data.firstName,
+          lastName: data.lastName,
+          token: data.token,
+          email: data.email,
+          isAdmin: data.isAdmin,
+        }));
+      },
+    }),
+    {
+      name: "user",
     }
-  }),
-  {
-    name: 'user'
-  }
-))
+  )
+);

@@ -6,10 +6,10 @@ Catalog Client
 
 1. NextJS
 2. ReactQuery
-3. Heroui
+3. HeroUI
 4. TailwindCSS
 5. Zustand
-
+5. Zod
 
 ## 🛠 Installing
 

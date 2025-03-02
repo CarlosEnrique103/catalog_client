@@ -40,7 +40,7 @@ export default function LoginContainer() {
       {showAlert && (
         <AlertCritical
           title="Error"
-          subtitle="Email or password is incorrect"
+          subtitle="Email or password is incorrect."
         />
       )}
       <PrimaryButton onPress={handleSubmit}>Login</PrimaryButton>

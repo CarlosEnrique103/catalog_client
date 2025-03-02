@@ -42,6 +42,34 @@ const config: Config = {
             90: "#fa4003",
           },
         },
+        system: {
+          red: {
+            base: "#DE350B",
+            light: "#FAE9EA",
+            lightHover: "#F5D2D3",
+            dark: "#980C0C",
+          },
+          orange: {
+            alert: "#E98305",
+            dark: "#AD5700",
+            lightHover: "#FAE2C7",
+          },
+          green: {
+            normal: "#28A138",
+            dark: "#2D7738",
+            light: "#EBF5EC",
+            lightHover: "#D7EAD9",
+          },
+          blue: {
+            base: "#0172CA",
+            light: "#E8F4FD",
+            lightHover: "#D0E9FB",
+            dark: "#005AA3",
+          },
+          pink: {
+            light: "#FFF2E2",
+          },
+        },
       },
       backgroundImage: {
         "gradient-violet":

@@ -1,8 +1,11 @@
-import { z } from "zod";
+import { set, z } from "zod";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import useLoaderStore from "@/store/ui/useLoaderStore";
 import { loginSchema } from "../schemas/loginSchema";
+import { loginApi } from "../services/loginService";
+import { useUserStore } from "@/store/auth/userStore";
+
 export default function useLogin() {
   const [isFormValid, setIsFormValid] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
@@ -16,6 +19,7 @@ export default function useLogin() {
     password: "",
   });
   const router = useRouter();
+  const { setUser } = useUserStore();
 
   const validateForm = (updatedData: FormLoginState) => {
     try {
@@ -55,7 +59,22 @@ export default function useLogin() {
 
   const handleSignIn = async (email: string, password: string) => {
     try {
-      return true;
+      const response = await loginApi({ email, password });
+
+      if (response?.data) {
+        localStorage.setItem("user_token", response.data.token);
+        setUser({
+          id: response.data.id,
+          firstName: response.data.firstName,
+          lastName: response.data.lastName,
+          token: response.data.token,
+          email: response.data.email,
+          isAdmin: response.data.isAdmin,
+        });
+
+        return true;
+      }
+      return false;
     } catch (error) {
       setShowAlert(true);
       console.error("Error during sign in:", error);
@@ -72,7 +91,6 @@ export default function useLogin() {
     const isSignedIn = await handleSignIn(formData.email, formData.password);
 
     if (isSignedIn) {
-      console.log({ formData });
       router.push(`/home`);
     }
 
