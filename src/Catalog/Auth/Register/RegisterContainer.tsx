@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { PrimaryButton } from "@/components/UI/PrimaryButton";
 import { Input } from "@heroui/react";
 import { AuthIcon } from "@/icons";

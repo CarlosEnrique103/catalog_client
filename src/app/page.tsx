@@ -1,7 +1,5 @@
-export default function Home() {
-  return (
-    <div className="container">
-      <h1>Hello to catalog...</h1>
-    </div>
-  );
+import HomeContainer from "@/Catalog/Home/HomeContainer";
+
+export default function HomePage() {
+  return <HomeContainer />;
 }

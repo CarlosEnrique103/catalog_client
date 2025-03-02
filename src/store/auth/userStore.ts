@@ -3,6 +3,7 @@ import { persist } from "zustand/middleware";
 
 type Actions = {
   setUser: (data: IUser) => void;
+  resetUser: () => void;
 };
 
 export const useUserStore = create(
@@ -24,7 +25,18 @@ export const useUserStore = create(
           isAdmin: data.isAdmin,
         }));
       },
+      resetUser: () => {
+        set(() => ({
+          id: "",
+          firstName: "",
+          lastName: "",
+          token: "",
+          email: "",
+          isAdmin: false,
+        }));
+      },
     }),
+
     {
       name: "user",
     }

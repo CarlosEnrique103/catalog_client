@@ -1,6 +1,6 @@
 # 👨🏻‍💻 Project
 
-Catalog Client
+Catalog Client, with login, register, list products and downloadPDF.
 
 ## 🖥 Technologies & Languages
 
@@ -24,6 +24,11 @@ $ npm install
 # development
 $ npm run dev
 ```
+
+## 🪪 Screens
+
+[Download file](https://raw.githubusercontent.com/CarlosEnrique103/catalog_api/main/catalog.pdf)
+
 
 ## 🐨 Stay in touch
 

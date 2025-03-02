@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import useLoaderStore from "@/store/ui/useLoaderStore";
 import { registerSchema } from "../schemas/registerSchema";
 import { useUserStore } from "@/store/auth/userStore";
-import { registerApi } from "../services/loginService";
+import { registerApi } from "../services/registerService";
 
 export default function useRegister() {
   const [isFormValid, setIsFormValid] = useState(false);

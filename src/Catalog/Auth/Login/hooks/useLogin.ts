@@ -91,7 +91,7 @@ export default function useLogin() {
     const isSignedIn = await handleSignIn(formData.email, formData.password);
 
     if (isSignedIn) {
-      router.push(`/home`);
+      router.push(`/`);
     }
 
     hideLoader();
